@@ -2,4 +2,16 @@
     <string name="app_name">GroupProject</string>
     <string name="full_name">Full Name</string>
     <string name="student_id">Student ID Number</string>
+    <string name="gender">Gender</string>
+    <string name="course_major">Course/Major</string>
+    <string name="total_fees">Total Fees ($)</string>
+    <string name="fees_paid">Fees Paid ($)</string>
+    <string name="balance_due">Balance Due</string>
+    <string name="clearance_date">Balance Clearance Date</string>
+    <string name="save_student">Save Student</string>
+    <string name="save_fee">Save Fee Data</string>
+    <string name="search">Search</string>
+    <string name="student_entry">Student Entry</string>
+    <string name="fee_entry">Fee Entry</string>
+    <string name="summary">View Summary</string>
 </resources>

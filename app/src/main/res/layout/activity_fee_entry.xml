@@ -12,65 +12,79 @@
         android:gravity="center_horizontal">
 
         <TextView
-            android:id="@+id/studentFormTitle"
+            android:id="@+id/feeFormTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enter Student Details"
+            android:text="Enter Fee Details"
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="#2196F3"
             android:layout_marginBottom="24dp" />
 
         <EditText
-            android:id="@+id/fullNameInput"
+            android:id="@+id/studentIdInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autofillHints=""
-            android:hint="@string/full_name"
-            android:inputType="textPersonName"
-            android:layout_marginBottom="12dp"
-            android:padding="12dp"
-            android:background="@drawable/edit_text_background" />
-
-        <EditText
-            android:id="@+id/idNumberInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints=""
-            android:hint="@string/student_id"
+            android:hint="Student ID Number"
             android:inputType="text"
             android:layout_marginBottom="12dp"
             android:padding="12dp"
             android:background="@drawable/edit_text_background" />
 
         <EditText
-            android:id="@+id/genderInput"
+            android:id="@+id/totalFeesInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Gender"
-            android:inputType="text"
+            android:hint="Total Fees ($)"
+            android:inputType="numberDecimal"
             android:layout_marginBottom="12dp"
             android:padding="12dp"
             android:background="@drawable/edit_text_background" />
 
         <EditText
-            android:id="@+id/courseMajorInput"
+            android:id="@+id/feesPaidInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Course Major"
-            android:inputType="text"
+            android:hint="Fees Paid ($)"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="12dp"
+            android:padding="12dp"
+            android:background="@drawable/edit_text_background" />
+
+        <TextView
+            android:id="@+id/balanceDueDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Balance Due: $0.00"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#FF5722"
+            android:padding="12dp"
+            android:background="#FFF3E0"
+            android:layout_marginBottom="12dp"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/clearanceDateDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Balance Clearance Date: "
+            android:textSize="16sp"
+            android:textColor="#757575"
+            android:padding="12dp"
+            android:background="#F5F5F5"
             android:layout_marginBottom="20dp"
-            android:padding="12dp"
-            android:background="@drawable/edit_text_background" />
+            android:gravity="center" />
 
         <Button
-            android:id="@+id/saveButton"
+            android:id="@+id/saveFeeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Save Student"
+            android:text="Save Fee Data"
             android:textColor="#FFFFFF"
             android:background="#4CAF50"
             android:padding="12dp"
-            android:minWidth="200dp"/>
+            android:minWidth="200dp" />
+
     </LinearLayout>
 </ScrollView>

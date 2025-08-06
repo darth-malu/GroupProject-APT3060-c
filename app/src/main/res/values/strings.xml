@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GroupProject</string>
+    <string name="full_name">Full Name</string>
+    <string name="student_id">Student ID Number</string>
 </resources>

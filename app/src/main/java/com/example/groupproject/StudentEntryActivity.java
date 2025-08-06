@@ -7,9 +7,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class StudentEntryActivity extends AppCompatActivity {
     EditText fullName, idNumber, gender, courseMajor;
     Button saveButton;
+    // Declare dbRef here
     DatabaseReference dbRef;
 
     @Override
@@ -18,11 +22,12 @@ public class StudentEntryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_student_entry);
 
         fullName = findViewById(R.id.fullNameInput);
-        idNumber = findViewById(R.id.idNumberInput);
+        idNumber = findViewById(R.id.idNumberInput); // Ensure this ID matches your layout file
         gender = findViewById(R.id.genderInput);
         courseMajor = findViewById(R.id.courseMajorInput);
         saveButton = findViewById(R.id.saveButton);
 
+        // Initialize dbRef here
         dbRef = FirebaseDatabase.getInstance().getReference("students");
 
         saveButton.setOnClickListener(v -> {
@@ -31,11 +36,20 @@ public class StudentEntryActivity extends AppCompatActivity {
             String g = gender.getText().toString();
             String major = courseMajor.getText().toString();
 
-            String studentId = dbRef.push().getKey();
-            Student student = new Student(name, id, g, major);
+            if (name.isEmpty() || id.isEmpty() || g.isEmpty() || major.isEmpty()) {
+                Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+            } else {
+                String studentKey = dbRef.push().getKey(); // Use a more descriptive variable name like studentKey or recordKey
+                if (studentKey == null) {
+                    Toast.makeText(StudentEntryActivity.this, "Failed to generate a unique key for the student.", Toast.LENGTH_SHORT).show();
+                    return; // Exit if key generation fails
+                }
+                Student student = new Student(name, id, g, major); // Assuming Student class constructor matches these parameters
 
-            dbRef.child(studentId).setValue(student);
-            Toast.makeText(this, "Student Saved", Toast.LENGTH_SHORT).show();
+                dbRef.child(studentKey).setValue(student)
+                        .addOnSuccessListener(aVoid -> Toast.makeText(StudentEntryActivity.this, "Student Saved", Toast.LENGTH_SHORT).show())
+                        .addOnFailureListener(e -> Toast.makeText(StudentEntryActivity.this, "Failed to save student: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+            }
         });
     }
 }

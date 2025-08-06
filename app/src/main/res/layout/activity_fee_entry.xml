@@ -29,6 +29,8 @@
             android:inputType="text"
             android:layout_marginBottom="12dp"
             android:padding="12dp"
+            android:textColor="#000000"
+            android:textColorHint="#757575"
             android:background="@drawable/edit_text_background" />
 
         <EditText
@@ -39,6 +41,8 @@
             android:inputType="numberDecimal"
             android:layout_marginBottom="12dp"
             android:padding="12dp"
+            android:textColor="#000000"
+            android:textColorHint="#757575"
             android:background="@drawable/edit_text_background" />
 
         <EditText
@@ -49,6 +53,8 @@
             android:inputType="numberDecimal"
             android:layout_marginBottom="12dp"
             android:padding="12dp"
+            android:textColor="#000000"
+            android:textColorHint="#757575"
             android:background="@drawable/edit_text_background" />
 
         <TextView

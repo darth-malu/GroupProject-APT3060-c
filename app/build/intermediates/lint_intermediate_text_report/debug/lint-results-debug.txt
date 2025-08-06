@@ -1,0 +1,380 @@
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/java/com/example/groupproject/FeeEntryActivity.java:110: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+                balanceDueDisplay.setText(String.format("Balance Due: $%.2f", balance));
+                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/java/com/example/groupproject/SummaryActivity.java:163: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+        totalFeesText.setText(String.format("Total Fees: $%.2f", fee.getTotalFees()));
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/java/com/example/groupproject/SummaryActivity.java:164: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+        feesPaidText.setText(String.format("Fees Paid: $%.2f", fee.getFeesPaid()));
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/java/com/example/groupproject/SummaryActivity.java:165: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+        balanceDueText.setText(String.format("Balance Due: $%.2f", fee.getBalanceDue()));
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "DefaultLocale":
+   Calling String#toLowerCase() or #toUpperCase() without specifying an
+   explicit locale is a common source of bugs. The reason for that is that
+   those methods will use the current locale on the user's device, and even
+   though the code appears to work correctly when you are developing the app,
+   it will fail in some locales. For example, in the Turkish locale, the
+   uppercase replacement for i is not I.
+
+   If you want the methods to just perform ASCII replacement, for example to
+   convert an enum name, call String#toUpperCase(Locale.US) instead. If you
+   really want to use the current locale, call
+   String#toUpperCase(Locale.getDefault()) instead.
+
+   https://developer.android.com/reference/java/util/Locale.html#default_locale
+
+/Users/macbook/playground/GroupProject-APT3060-c/app/build.gradle:13: Warning: Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details. [OldTargetApi]
+        targetSdk 34
+        ~~~~~~~~~~~~
+
+   Explanation for issues of type "OldTargetApi":
+   When your application runs on a version of Android that is more recent than
+   your targetSdkVersion specifies that it has been tested with, various
+   compatibility modes kick in. This ensures that your application continues
+   to work, but it may look out of place. For example, if the targetSdkVersion
+   is less than 14, your app may get an option button in the UI.
+
+   To fix this issue, set the targetSdkVersion to the highest available value.
+   Then test your app to make sure everything works correctly. You may want to
+   consult the compatibility notes to see what changes apply to each version
+   you are adding support for:
+   https://developer.android.com/reference/android/os/Build.VERSION_CODES.html
+   as well as follow this guide:
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.
+   html
+
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.html
+
+/Users/macbook/playground/GroupProject-APT3060-c/app/build.gradle:33: Warning: A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.1 [GradleDependency]
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/build.gradle:34: Warning: A newer version of com.google.android.material:material than 1.10.0 is available: 1.12.0 [GradleDependency]
+    implementation 'com.google.android.material:material:1.10.0'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/build.gradle:35: Warning: A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.1 [GradleDependency]
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/build.gradle:39: Warning: A newer version of com.google.firebase:firebase-bom than 32.3.1 is available: 34.0.0 [GradleDependency]
+    implementation platform('com.google.firebase:firebase-bom:32.3.1')
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/build.gradle:44: Warning: A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.3.0 [GradleDependency]
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/build.gradle:45: Warning: A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.7.0 [GradleDependency]
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_fee_entry.xml:6: Warning: Possible overdraw: Root element paints background #FFFFFF with a theme that also paints a background (inferred theme is @style/Theme.GroupProject) [Overdraw]
+    android:background="#FFFFFF">
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_student_entry.xml:6: Warning: Possible overdraw: Root element paints background #FFFFFF with a theme that also paints a background (inferred theme is @style/Theme.GroupProject) [Overdraw]
+    android:background="#FFFFFF">
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_summary.xml:7: Warning: Possible overdraw: Root element paints background #F5F5F5 with a theme that also paints a background (inferred theme is @style/Theme.GroupProject) [Overdraw]
+    android:background="#F5F5F5">
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "Overdraw":
+   If you set a background drawable on a root view, then you should use a
+   custom theme where the theme background is null. Otherwise, the theme
+   background will be painted first, only to have your custom background
+   completely cover it; this is called "overdraw".
+
+   NOTE: This detector relies on figuring out which layouts are associated
+   with which activities based on scanning the Java code, and it's currently
+   doing that using an inexact pattern matching algorithm. Therefore, it can
+   incorrectly conclude which activity the layout is associated with and then
+   wrongly complain that a background-theme is hidden.
+
+   If you want your custom background on multiple pages, then you should
+   consider making a custom theme with your custom background and just using
+   that theme instead of a root element background.
+
+   Of course it's possible that your custom drawable is translucent and you
+   want it to be mixed with the background. However, you will get better
+   performance if you pre-mix the background with your drawable and use that
+   resulting image or color as a custom theme background instead.
+
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/values/strings.xml:5: Warning: The resource R.string.gender appears to be unused [UnusedResources]
+    <string name="gender">Gender</string>
+            ~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/values/strings.xml:6: Warning: The resource R.string.course_major appears to be unused [UnusedResources]
+    <string name="course_major">Course/Major</string>
+            ~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/values/strings.xml:7: Warning: The resource R.string.total_fees appears to be unused [UnusedResources]
+    <string name="total_fees">Total Fees ($)</string>
+            ~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/values/strings.xml:8: Warning: The resource R.string.fees_paid appears to be unused [UnusedResources]
+    <string name="fees_paid">Fees Paid ($)</string>
+            ~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/values/strings.xml:9: Warning: The resource R.string.balance_due appears to be unused [UnusedResources]
+    <string name="balance_due">Balance Due</string>
+            ~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/values/strings.xml:10: Warning: The resource R.string.clearance_date appears to be unused [UnusedResources]
+    <string name="clearance_date">Balance Clearance Date</string>
+            ~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/values/strings.xml:11: Warning: The resource R.string.save_student appears to be unused [UnusedResources]
+    <string name="save_student">Save Student</string>
+            ~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/values/strings.xml:12: Warning: The resource R.string.save_fee appears to be unused [UnusedResources]
+    <string name="save_fee">Save Fee Data</string>
+            ~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/values/strings.xml:13: Warning: The resource R.string.search appears to be unused [UnusedResources]
+    <string name="search">Search</string>
+            ~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/values/strings.xml:14: Warning: The resource R.string.student_entry appears to be unused [UnusedResources]
+    <string name="student_entry">Student Entry</string>
+            ~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/values/strings.xml:15: Warning: The resource R.string.fee_entry appears to be unused [UnusedResources]
+    <string name="fee_entry">Fee Entry</string>
+            ~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/values/strings.xml:16: Warning: The resource R.string.summary appears to be unused [UnusedResources]
+    <string name="summary">View Summary</string>
+            ~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
+
+
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
+
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests =true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests =true.
+   ,
+
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_student_entry.xml:41: Warning: The view name (@+id/idNumberInput) suggests this is a number, but it does not include a numeric inputType (such as 'numberSigned') [TextFields]
+            android:inputType="text"
+            ~~~~~~~~~~~~~~~~~~~~~~~~
+    /Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_student_entry.xml:36: id defined here
+
+   Explanation for issues of type "TextFields":
+   Providing an inputType attribute on a text field improves usability because
+   depending on the data to be input, optimized keyboards can be shown to the
+   user (such as just digits and parentheses for a phone number). 
+
+   The lint detector also looks at the id of the view, and if the id offers a
+   hint of the purpose of the field (for example, the id contains the phrase
+   phone or email), then lint will also ensure that the inputType contains the
+   corresponding type attributes.
+
+   If you really want to keep the text field generic, you can suppress this
+   warning by setting inputType="text".
+
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_fee_entry.xml:24: Warning: Missing autofillHints attribute [Autofill]
+        <EditText
+         ~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_fee_entry.xml:34: Warning: Missing autofillHints attribute [Autofill]
+        <EditText
+         ~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_fee_entry.xml:44: Warning: Missing autofillHints attribute [Autofill]
+        <EditText
+         ~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_student_entry.xml:46: Warning: Missing autofillHints attribute [Autofill]
+        <EditText
+         ~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_student_entry.xml:56: Warning: Missing autofillHints attribute [Autofill]
+        <EditText
+         ~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_summary.xml:32: Warning: Missing autofillHints attribute [Autofill]
+            <EditText
+             ~~~~~~~~
+
+   Explanation for issues of type "Autofill":
+   Specify an autofillHints attribute when targeting SDK version 26 or higher
+   or explicitly specify that the view is not important for autofill. Your app
+   can help an autofill service classify the data correctly by providing the
+   meaning of each view that could be autofillable, such as views representing
+   usernames, passwords, credit card fields, email addresses, etc.
+
+   The hints can have any value, but it is recommended to use predefined
+   values like 'username' for a username or 'creditCardNumber' for a credit
+   card number. For a list of all predefined autofill hint constants, see the
+   AUTOFILL_HINT_ constants in the View reference at
+   https://developer.android.com/reference/android/view/View.html.
+
+   You can mark a view unimportant for autofill by specifying an
+   importantForAutofill attribute on that view or a parent view. See
+   https://developer.android.com/reference/android/view/View.html#setImportant
+   ForAutofill(int).
+
+   https://developer.android.com/guide/topics/text/autofill.html
+
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/java/com/example/groupproject/FeeEntryActivity.java:79: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        clearanceDateDisplay.setText("Balance Clearance Date: " + currentDate);
+                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/java/com/example/groupproject/FeeEntryActivity.java:79: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        clearanceDateDisplay.setText("Balance Clearance Date: " + currentDate);
+                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/java/com/example/groupproject/FeeEntryActivity.java:112: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                balanceDueDisplay.setText("Balance Due: $0.00");
+                                          ~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/java/com/example/groupproject/FeeEntryActivity.java:115: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            balanceDueDisplay.setText("Balance Due: Invalid input");
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/java/com/example/groupproject/FeeEntryActivity.java:164: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        balanceDueDisplay.setText("Balance Due: $0.00");
+                                  ~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/java/com/example/groupproject/SummaryActivity.java:153: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        studentNameText.setText("Name: " + student.getName());
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/java/com/example/groupproject/SummaryActivity.java:153: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        studentNameText.setText("Name: " + student.getName());
+                                ~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/java/com/example/groupproject/SummaryActivity.java:154: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        studentIdText.setText("Student ID: " + student.getId());
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/java/com/example/groupproject/SummaryActivity.java:154: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        studentIdText.setText("Student ID: " + student.getId());
+                              ~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/java/com/example/groupproject/SummaryActivity.java:155: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        studentGenderText.setText("Gender: " + student.getGender());
+                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/java/com/example/groupproject/SummaryActivity.java:155: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        studentGenderText.setText("Gender: " + student.getGender());
+                                  ~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/java/com/example/groupproject/SummaryActivity.java:156: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        studentMajorText.setText("Major: " + student.getMajor());
+                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/java/com/example/groupproject/SummaryActivity.java:156: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        studentMajorText.setText("Major: " + student.getMajor());
+                                 ~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/java/com/example/groupproject/SummaryActivity.java:166: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        clearanceDateText.setText("Clearance Date: " + fee.getBalanceClearanceDate());
+                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/java/com/example/groupproject/SummaryActivity.java:166: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        clearanceDateText.setText("Clearance Date: " + fee.getBalanceClearanceDate());
+                                  ~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/java/com/example/groupproject/SummaryActivity.java:180: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        noDataMessage.setText("No student data found for the entered ID");
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/java/com/example/groupproject/SummaryActivity.java:190: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            noDataMessage.setText("No data found for the entered Student ID");
+                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SetTextI18n":
+   When calling TextView#setText
+   * Never call Number#toString() to format numbers; it will not handle
+   fraction separators and locale-specific digits properly. Consider using
+   String#format with proper format specifications (%d or %f) instead.
+   * Do not pass a string literal (e.g. "Hello") to display text. Hardcoded
+   text can not be properly translated to other languages. Consider using
+   Android resource strings instead.
+   * Do not build messages by concatenating text chunks. Such messages can not
+   be properly translated.
+
+   https://developer.android.com/guide/topics/resources/localization.html
+
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_fee_entry.xml:18: Warning: Hardcoded string "Enter Fee Details", should use @string resource [HardcodedText]
+            android:text="Enter Fee Details"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_fee_entry.xml:28: Warning: Hardcoded string "Student ID Number", should use @string resource [HardcodedText]
+            android:hint="Student ID Number"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_fee_entry.xml:38: Warning: Hardcoded string "Total Fees ($)", should use @string resource [HardcodedText]
+            android:hint="Total Fees ($)"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_fee_entry.xml:48: Warning: Hardcoded string "Fees Paid ($)", should use @string resource [HardcodedText]
+            android:hint="Fees Paid ($)"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_fee_entry.xml:58: Warning: Hardcoded string "Balance Due: $0.00", should use @string resource [HardcodedText]
+            android:text="Balance Due: $0.00"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_fee_entry.xml:71: Warning: Hardcoded string "Balance Clearance Date: ", should use @string resource [HardcodedText]
+            android:text="Balance Clearance Date: "
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_fee_entry.xml:83: Warning: Hardcoded string "Save Fee Data", should use @string resource [HardcodedText]
+            android:text="Save Fee Data"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_student_entry.xml:18: Warning: Hardcoded string "Enter Student Details", should use @string resource [HardcodedText]
+            android:text="Enter Student Details"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_student_entry.xml:50: Warning: Hardcoded string "Gender", should use @string resource [HardcodedText]
+            android:hint="Gender"
+            ~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_student_entry.xml:60: Warning: Hardcoded string "Course Major", should use @string resource [HardcodedText]
+            android:hint="Course Major"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_student_entry.xml:70: Warning: Hardcoded string "Save Student", should use @string resource [HardcodedText]
+            android:text="Save Student"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_summary.xml:18: Warning: Hardcoded string "Student Summary", should use @string resource [HardcodedText]
+            android:text="Student Summary"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_summary.xml:37: Warning: Hardcoded string "Enter Student ID", should use @string resource [HardcodedText]
+                android:hint="Enter Student ID"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_summary.xml:47: Warning: Hardcoded string "Search", should use @string resource [HardcodedText]
+                android:text="Search"
+                ~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_summary.xml:81: Warning: Hardcoded string "Student Information", should use @string resource [HardcodedText]
+                        android:text="Student Information"
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_summary.xml:91: Warning: Hardcoded string "Name: ", should use @string resource [HardcodedText]
+                        android:text="Name: "
+                        ~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_summary.xml:99: Warning: Hardcoded string "Student ID: ", should use @string resource [HardcodedText]
+                        android:text="Student ID: "
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_summary.xml:107: Warning: Hardcoded string "Gender: ", should use @string resource [HardcodedText]
+                        android:text="Gender: "
+                        ~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_summary.xml:115: Warning: Hardcoded string "Major: ", should use @string resource [HardcodedText]
+                        android:text="Major: "
+                        ~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_summary.xml:141: Warning: Hardcoded string "Fee Information", should use @string resource [HardcodedText]
+                        android:text="Fee Information"
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_summary.xml:151: Warning: Hardcoded string "Total Fees: ", should use @string resource [HardcodedText]
+                        android:text="Total Fees: "
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_summary.xml:159: Warning: Hardcoded string "Fees Paid: ", should use @string resource [HardcodedText]
+                        android:text="Fees Paid: "
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_summary.xml:167: Warning: Hardcoded string "Balance Due: ", should use @string resource [HardcodedText]
+                        android:text="Balance Due: "
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_summary.xml:176: Warning: Hardcoded string "Clearance Date: ", should use @string resource [HardcodedText]
+                        android:text="Clearance Date: "
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/layout/activity_summary.xml:188: Warning: Hardcoded string "No data found", should use @string resource [HardcodedText]
+                android:text="No data found"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/menu/main_menu.xml:7: Warning: Hardcoded string "Student Entry", should use @string resource [HardcodedText]
+        android:title="Student Entry"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/menu/main_menu.xml:13: Warning: Hardcoded string "Fee Entry", should use @string resource [HardcodedText]
+        android:title="Fee Entry"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbook/playground/GroupProject-APT3060-c/app/src/main/res/menu/main_menu.xml:19: Warning: Hardcoded string "View Summary", should use @string resource [HardcodedText]
+        android:title="View Summary"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "HardcodedText":
+   Hardcoding text attributes directly in layout files is bad for several
+   reasons:
+
+   * When creating configuration variations (for example for landscape or
+   portrait) you have to repeat the actual text (and keep it up to date when
+   making changes)
+
+   * The application cannot be translated to other languages by just adding
+   new translations for existing string resources.
+
+   There are quickfixes to automatically extract this hardcoded string into a
+   resource lookup.
+
+0 errors, 78 warnings

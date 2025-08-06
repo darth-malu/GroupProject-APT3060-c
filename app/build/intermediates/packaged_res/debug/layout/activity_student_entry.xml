@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/studentFormTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter Student Details"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#2196F3"
+            android:layout_marginBottom="24dp" />
+
+        <EditText
+            android:id="@+id/fullNameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/full_name"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="12dp"
+            android:padding="12dp"
+            android:background="@drawable/edit_text_background" />
+
+        <EditText
+            android:id="@+id/idNumberInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/student_id"
+            android:inputType="text"
+            android:layout_marginBottom="12dp"
+            android:padding="12dp"
+            android:background="@drawable/edit_text_background" />
+
+        <EditText
+            android:id="@+id/genderInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Gender"
+            android:inputType="text"
+            android:layout_marginBottom="12dp"
+            android:padding="12dp"
+            android:background="@drawable/edit_text_background" />
+
+        <EditText
+            android:id="@+id/courseMajorInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Course Major"
+            android:inputType="text"
+            android:layout_marginBottom="20dp"
+            android:padding="12dp"
+            android:background="@drawable/edit_text_background" />
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save Student"
+            android:textColor="#FFFFFF"
+            android:background="#4CAF50"
+            android:padding="12dp"
+            android:minWidth="200dp"/>
+    </LinearLayout>
+</ScrollView>

@@ -33,17 +33,8 @@ public class StudentEntryActivity extends AppCompatActivity {
         saveButton = findViewById(R.id.saveButton);
 
         // Initialize dbRef here
-        try {
-            // Try to get the database instance with explicit URL
-            FirebaseDatabase database = FirebaseDatabase.getInstance("https://class-23f8f-default-rtdb.firebaseio.com/");
-            dbRef = database.getReference("students");
-            Log.d(TAG, "Firebase database reference initialized with explicit URL");
-        } catch (Exception e) {
-            Log.e(TAG, "Failed to initialize Firebase database: " + e.getMessage(), e);
-            // Fallback to default instance
-            dbRef = FirebaseDatabase.getInstance().getReference("students");
-            Log.d(TAG, "Using default Firebase database instance");
-        }
+        dbRef = FirebaseDatabase.getInstance().getReference("students");
+        Log.d(TAG, "Firebase database reference initialized");
 
         saveButton.setOnClickListener(v -> {
             Log.d(TAG, "Save button clicked");

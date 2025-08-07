@@ -4,24 +4,12 @@
         "source": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-main-37:/drawable/edit_text_background.xml"
     },
     {
-        "merged": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-merged_res-35:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-main-37:/mipmap-xxxhdpi/ic_launcher_round.webp"
-    },
-    {
         "merged": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-merged_res-35:/layout_activity_summary.xml.flat",
         "source": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-main-37:/layout/activity_summary.xml"
     },
     {
         "merged": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-merged_res-35:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-main-37:/mipmap-xxhdpi/ic_launcher_round.webp"
-    },
-    {
-        "merged": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-merged_res-35:/xml_backup_rules.xml.flat",
-        "source": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-main-37:/xml/backup_rules.xml"
-    },
-    {
-        "merged": "com.example.groupproject.app-merged_res-35:/layout_activity_fee_entry.xml.flat",
-        "source": "com.example.groupproject.app-main-37:/layout/activity_fee_entry.xml"
     },
     {
         "merged": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-merged_res-35:/mipmap-mdpi_ic_launcher_round.webp.flat",
@@ -32,6 +20,42 @@
         "source": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-main-37:/mipmap-mdpi/ic_launcher.webp"
     },
     {
+        "merged": "com.example.groupproject.app-merged_res-35:/layout_activity_summary.xml.flat",
+        "source": "com.example.groupproject.app-main-37:/layout/activity_summary.xml"
+    },
+    {
+        "merged": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-merged_res-35:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-main-37:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-merged_res-35:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-main-37:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-merged_res-35:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-main-37:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-merged_res-35:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-main-37:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-merged_res-35:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-main-37:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-merged_res-35:/xml_backup_rules.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-main-37:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.groupproject.app-merged_res-35:/layout_activity_fee_entry.xml.flat",
+        "source": "com.example.groupproject.app-main-37:/layout/activity_fee_entry.xml"
+    },
+    {
+        "merged": "com.example.groupproject.app-merged_res-35:/layout_activity_student_entry.xml.flat",
+        "source": "com.example.groupproject.app-main-37:/layout/activity_student_entry.xml"
+    },
+    {
         "merged": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-merged_res-35:/mipmap-hdpi_ic_launcher.webp.flat",
         "source": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-main-37:/mipmap-hdpi/ic_launcher.webp"
     },
@@ -40,24 +64,12 @@
         "source": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-main-37:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-merged_res-35:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-main-37:/mipmap-xhdpi/ic_launcher_round.webp"
-    },
-    {
         "merged": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-merged_res-35:/xml_data_extraction_rules.xml.flat",
         "source": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-main-37:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-merged_res-35:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-main-37:/drawable/ic_launcher_foreground.xml"
-    },
-    {
         "merged": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-merged_res-35:/drawable_ic_launcher_background.xml.flat",
         "source": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-main-37:/drawable/ic_launcher_background.xml"
-    },
-    {
-        "merged": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-merged_res-35:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-main-37:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
         "merged": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-merged_res-35:/mipmap-xxhdpi_ic_launcher.webp.flat",
@@ -70,10 +82,6 @@
     {
         "merged": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-merged_res-35:/layout_activity_fee_entry.xml.flat",
         "source": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-main-37:/layout/activity_fee_entry.xml"
-    },
-    {
-        "merged": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-merged_res-35:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-main-37:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
         "merged": "/Users/macbook/.gradle/daemon/8.10/com.example.groupproject.app-merged_res-35:/mipmap-hdpi_ic_launcher_round.webp.flat",

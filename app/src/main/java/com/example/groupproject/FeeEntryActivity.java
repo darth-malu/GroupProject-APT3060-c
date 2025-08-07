@@ -1,6 +1,5 @@
 package com.example.groupproject;
 
-import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -18,7 +17,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -27,10 +25,6 @@ public class FeeEntryActivity extends AppCompatActivity {
     TextView balanceDueDisplay, clearanceDateDisplay;
     Button saveFeeButton;
     DatabaseReference dbRef;
-    
-    // Calendar instance for date picker
-    private Calendar selectedDate;
-    private SimpleDateFormat dateFormatter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,17 +40,10 @@ public class FeeEntryActivity extends AppCompatActivity {
         saveFeeButton = findViewById(R.id.saveFeeButton);
 
         // Initialize Firebase database reference
-        dbRef = FirebaseDatabase.getInstance("https://class-23f8f-default-rtdb.firebaseio.com/").getReference("fees");
-
-        // Initialize date components
-        selectedDate = Calendar.getInstance();
-        dateFormatter = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        dbRef = FirebaseDatabase.getInstance().getReference("fees");
 
         // Set current date for balance clearance
         setCurrentDate();
-
-        // Make clearance date clickable for date selection
-        setupDatePicker();
 
         // Add text watchers for automatic balance calculation
         setupBalanceCalculation();
@@ -87,32 +74,9 @@ public class FeeEntryActivity extends AppCompatActivity {
     }
 
     private void setCurrentDate() {
-        String currentDate = dateFormatter.format(selectedDate.getTime());
-        clearanceDateDisplay.setText("Balance Clearance Date: " + currentDate + " (Tap to change)");
-    }
-
-    private void setupDatePicker() {
-        clearanceDateDisplay.setOnClickListener(v -> {
-            DatePickerDialog datePickerDialog = new DatePickerDialog(
-                this,
-                (view, year, month, dayOfMonth) -> {
-                    selectedDate.set(Calendar.YEAR, year);
-                    selectedDate.set(Calendar.MONTH, month);
-                    selectedDate.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                    
-                    String selectedDateStr = dateFormatter.format(selectedDate.getTime());
-                    clearanceDateDisplay.setText("Balance Clearance Date: " + selectedDateStr + " (Tap to change)");
-                },
-                selectedDate.get(Calendar.YEAR),
-                selectedDate.get(Calendar.MONTH),
-                selectedDate.get(Calendar.DAY_OF_MONTH)
-            );
-            
-            // Set minimum date to today (optional - remove if you want past dates)
-            datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
-            
-            datePickerDialog.show();
-        });
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        String currentDate = sdf.format(new Date());
+        clearanceDateDisplay.setText("Balance Clearance Date: " + currentDate);
     }
 
     private void setupBalanceCalculation() {
@@ -173,10 +137,11 @@ public class FeeEntryActivity extends AppCompatActivity {
             }
 
             double balanceDue = totalFees - feesPaid;
-            String selectedDateStr = dateFormatter.format(selectedDate.getTime());
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+            String currentDate = sdf.format(new Date());
 
             // Create Fee object
-            Fee fee = new Fee(studentId, totalFees, feesPaid, balanceDue, selectedDateStr);
+            Fee fee = new Fee(studentId, totalFees, feesPaid, balanceDue, currentDate);
 
             // Save to Firebase using student ID as key
             dbRef.child(studentId).setValue(fee)
@@ -197,9 +162,6 @@ public class FeeEntryActivity extends AppCompatActivity {
         totalFeesInput.setText("");
         feesPaidInput.setText("");
         balanceDueDisplay.setText("Balance Due: $0.00");
-        
-        // Reset date to current date
-        selectedDate = Calendar.getInstance();
         setCurrentDate();
     }
 }

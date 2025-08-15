@@ -27,14 +27,14 @@ public class StudentEntryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_student_entry);
 
         fullName = findViewById(R.id.fullNameInput);
-        idNumber = findViewById(R.id.idNumberInput); // Ensure this ID matches your layout file
+        idNumber = findViewById(R.id.idNumberInput);
         gender = findViewById(R.id.genderInput);
         courseMajor = findViewById(R.id.courseMajorInput);
         saveButton = findViewById(R.id.saveButton);
 
         // Initialize dbRef here
         try {
-            // Try to get the database instance with explicit URL
+
             FirebaseDatabase database = FirebaseDatabase.getInstance("https://class-23f8f-default-rtdb.firebaseio.com/");
             dbRef = database.getReference("students");
             Log.d(TAG, "Firebase database reference initialized with explicit URL");
@@ -66,7 +66,7 @@ public class StudentEntryActivity extends AppCompatActivity {
                     return; // Exit if key generation fails
                 }
                 Log.d(TAG, "Generated key: " + studentKey);
-                Student student = new Student(name, id, g, major); // Assuming Student class constructor matches these parameters
+                Student student = new Student(name, id, g, major);
 
                 Log.d(TAG, "Attempting to write to Firebase path: students/" + studentKey);
                 dbRef.child(studentKey).setValue(student)

@@ -108,7 +108,7 @@ public class FeeEntryActivity extends AppCompatActivity {
                 selectedDate.get(Calendar.DAY_OF_MONTH)
             );
             
-            // Set minimum date to today (optional - remove if you want past dates)
+
             datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
             
             datePickerDialog.show();
@@ -175,10 +175,10 @@ public class FeeEntryActivity extends AppCompatActivity {
             double balanceDue = totalFees - feesPaid;
             String selectedDateStr = dateFormatter.format(selectedDate.getTime());
 
-            // Create Fee object
+
             Fee fee = new Fee(studentId, totalFees, feesPaid, balanceDue, selectedDateStr);
 
-            // Save to Firebase using student ID as key
+
             dbRef.child(studentId).setValue(fee)
                     .addOnSuccessListener(aVoid -> {
                         Toast.makeText(FeeEntryActivity.this, "Fee data saved successfully", Toast.LENGTH_SHORT).show();
